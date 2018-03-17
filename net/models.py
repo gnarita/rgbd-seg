@@ -3,6 +3,8 @@ import numpy as np
 from keras.models import Model
 from keras.layers import Input, Dropout, Lambda
 from keras.layers.convolutional import Conv2D, MaxPooling2D, Deconv2D
+from keras.applications.vgg16 import VGG16
+from keras.layers.merge import Add
 
 def FCN_VGG16_32s(input_shape, class_num):
 
@@ -52,8 +54,6 @@ def FCN_VGG16_32s(input_shape, class_num):
 
     return model
 
-from keras.applications.vgg16 import VGG16
-from keras.layers.merge import Add
 
 def FCN_VGG16_32s_rgbd(input_shape, class_num):
     # input
